@@ -1,8 +1,16 @@
 import Utilitys
 
-let a = 17
-let b = 25
+@DomainConverter(UserDomainModel)
+public struct User: Codable {
+    let name: Int?
+    let email: Bool?
+    let phone: Double?
+    let address: String?
+}
 
-let (result, code) = #stringify(a + b)
-
-print("The value \(result) was produced by the code \"\(code)\"")
+public struct UserDomainModel {
+    let name: Int
+    let email: Bool
+    let phone: Double
+    let address: String
+}
