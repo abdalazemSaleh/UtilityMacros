@@ -20,6 +20,6 @@ public func getDefultValue(_ type: String?) -> Any {
     case "Bool?":
         return false
     default:
-        return "Not Founded"
+        return ".default"
     }
 }

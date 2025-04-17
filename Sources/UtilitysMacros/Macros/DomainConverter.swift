@@ -31,7 +31,7 @@ public struct DomainConverter: ExtensionMacro {
         print(type.allProperties.map { $0.type })
         
         /// Map Current Model To Domain Model
-        let params = type.allProperties.map { "\($0.name): self.\($0.name) ?? \(getDefultValue($0.type))" }.joined(separator: ",\n")
+        let params = type.allProperties.map { "\($0.name): self.\($0.name) ?? \(getDefultValue($0.type)) as \($0.type ?? "Unknown")" }.joined(separator: ",\n")
         
         let accessModifier: String = if let modifier = type.accessModifier { "\(modifier) " } else { "" }
         
